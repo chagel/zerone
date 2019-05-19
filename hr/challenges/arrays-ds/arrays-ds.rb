@@ -4,7 +4,14 @@ require 'json'
 require 'stringio'
 
 def reverseArray(a)
-  a.reverse
+  #a.reverse
+  len = a.size
+  result = []
+  while len > 0
+    result << a[len-1]
+    len -= 1
+  end
+  result
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
