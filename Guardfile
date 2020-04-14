@@ -6,8 +6,8 @@ module ::Guard
     end
   end
 
-  require_relative 'rs/runtime'
-  class Rust < Plugin
+  require_relative 'one/runtime'
+  class One < Plugin
     def run_on_modifications(paths)
       paths.each{|path| Zerone::One.new(path).run}
     end
@@ -18,6 +18,6 @@ guard 'HackerRank' do
   watch(%r{hr/challenges/.+\.rb})
 end
 
-guard 'Rust' do 
-  watch(%r{rs/.+\.rs})
+guard 'One' do 
+  watch(%r{one/.+\.(rs|rb)})
 end
